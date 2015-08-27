@@ -4,8 +4,8 @@
 	"description": "Nick Ooms Racing Development",
 	"version": "1.0",
 	"icons": {
-		"128": "chrome-icon.png",
-		"16": "chrome-icon16.png"
+		"128": "assets/chrome-icon.png",
+		"16": "assets/chrome-icon16.png"
 	},
 	"permissions": [
 		"storage",
