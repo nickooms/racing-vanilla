@@ -57,10 +57,10 @@ function addComplexBaan() {
 function addComplexHuis(corners, parameters) {
   parameters = parameters || {};
   var height = parameters.height || 2.5 + Math.random() * 7;
-  var floors = parameters.floors || 1;
+  var floors = parameters.floors || [{}];
   var triangles = THREE.Shape.Utils.triangulateShape(Points.toVertices(corners), []);
-  for (var i = 0; i < floors; i++) {
-    var h = i * height / floors;
+  for (var i = 0; i < floors.length; i++) {
+    var h = i * height / floors.length;
     var floor = Points.toVertices(corners, h);
     var geometry = new THREE.Geometry();
     geometry.vertices = floor;
