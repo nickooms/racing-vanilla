@@ -54,17 +54,22 @@ function addComplexBaan() {
   scene.add(complexBanenMesh);
 }
 
-function addComplexHuis(corners) {
-  var height = 2.5 + Math.random() * 7;
+function addComplexHuis(corners, parameters) {
+  parameters = parameters || {};
+  var height = parameters.height || 2.5 + Math.random() * 7;
+  var floors = parameters.floors || 1;
   var triangles = THREE.Shape.Utils.triangulateShape(Points.toVertices(corners), []);
-  var floor = Points.toVertices(corners, 0);
-  var geometry = new THREE.Geometry();
-  geometry.vertices = floor;
-  geometry.verticesNeedUpdate = true;
-  geometry.computeFaceNormals();
-  geometry.faces = Triangles.toFaces(triangles);
-  geometry.computeBoundingSphere();
-  scene.add(new THREE.Mesh(geometry, huizenMaterial.floor));
+  for (var i = 0; i < floors.length; i++) {
+    var h = i * height / floors;
+    var floor = Points.toVertices(corners, h);
+    var geometry = new THREE.Geometry();
+    geometry.vertices = floor;
+    geometry.verticesNeedUpdate = true;
+    geometry.computeFaceNormals();
+    geometry.faces = Triangles.toFaces(triangles);
+    geometry.computeBoundingSphere();
+    scene.add(new THREE.Mesh(geometry, huizenMaterial.floor));
+  }
   var wall = [];
   for (var cornerIndex in corners) {
   	var corner = corners[cornerIndex];
