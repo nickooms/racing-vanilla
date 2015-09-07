@@ -59,7 +59,7 @@ function addComplexHuis(corners, parameters) {
   var height = parameters.height || 2.5 + Math.random() * 7;
   var floors = parameters.floors || 1;
   var triangles = THREE.Shape.Utils.triangulateShape(Points.toVertices(corners), []);
-  for (var i = 0; i < floors.length; i++) {
+  for (var i = 0; i < floors; i++) {
     var h = i * height / floors;
     var floor = Points.toVertices(corners, h);
     var geometry = new THREE.Geometry();
