@@ -25,8 +25,9 @@ if (typeof chrome != 'undefined' && chrome.storage != null) {
  	}
 }
 /**
- * @param  {Number}
- * @return {Number}
+ * Converts degrees to radians
+ * @param  {Number} degree 
+ * @return {Number} radians
  */
 function rot(degree) {
 	return degree * (Math.PI / 180);
