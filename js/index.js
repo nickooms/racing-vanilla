@@ -25,8 +25,8 @@ if (typeof chrome != 'undefined' && chrome.storage != null) {
  	}
 }
 /**
- * @param  {[Number]}
- * @return {[Number]}
+ * @param  {Number}
+ * @return {Number}
  */
 function rot(degree) {
 	return degree * (Math.PI / 180);
