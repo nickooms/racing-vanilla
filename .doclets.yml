@@ -1,1 +1,2 @@
-files: js/index.js
+files:
+  - js/index.js
