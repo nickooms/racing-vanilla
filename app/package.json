@@ -1,0 +1,27 @@
+{
+  "name": "racing-vanilla",
+  "version": "1.0.0",
+  "description": "Racing & Shooting",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickooms/racing-vanilla.git"
+  },
+  "keywords": [
+    "racing",
+    "shooting"
+  ],
+  "author": "Nick Ooms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickooms/racing-vanilla/issues"
+  },
+  "homepage": "https://github.com/nickooms/racing-vanilla#readme"
+}
