@@ -15,9 +15,11 @@ module.exports = {
 			document.body.removeChild(renderer.domElement)
 		try {
 			renderer = new THREE.WebGLRenderer({
-				antialias: true,
-				alpha: true,
-				preserveDrawingBuffer: true
+				alpha: false,
+				depth: false,
+				stencil: false,
+				antialias: false,
+				preserveDrawingBuffer: false
 			})
 		} catch (e) {
 			try {
