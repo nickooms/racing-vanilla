@@ -163,12 +163,20 @@ const huizenMaterial = {
     	g = parseInt(Math.random() * 0xff),
     	b = parseInt(Math.random() * 0xff),
     	color = r << 16 | g << 8 | b
-    return new THREE.MeshBasicMaterial({
+    /*return new THREE.MeshBasicMaterial({
       color: color,
       opacity: 1,
       side: THREE.DoubleSide,
       transparent: false
-    })
+    })*/
+    return new THREE.MeshPhongMaterial({
+	    //diffuse: color,//0x555555,
+	    color: color,//0x555555,
+	    specular: 0x111111,
+	    shininess: 90,
+	    side: THREE.DoubleSide,
+	    shading: THREE.SmoothShading
+	  });
   },
   randomRoof() {
     const

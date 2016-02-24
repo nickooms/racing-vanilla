@@ -12,7 +12,16 @@ const
 			const scene = new THREE.Scene()
 			Scene._scene = scene
 			scene.fog = new THREE.Fog(0x6666ff, 1000, 10000)
-			scene.add(new THREE.AmbientLight(0xffffff))
+			scene.add(new THREE.AmbientLight(0x666666))
+
+			const light1 = new THREE.PointLight(0xff0040, 2, 0)
+  		light1.position.set(152561, 10, 221859.36)
+  		scene.add(light1)
+ 
+  		const light2 = new THREE.PointLight(0x0040ff, 2, 0)
+  		light2.position.set(152559, 10, 221857.36)
+  		scene.add(light2)
+
 			return scene
 		}
 	}

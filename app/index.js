@@ -54,6 +54,7 @@ function init() {
 	addGround()
 	//addTrack();
 	scene.add(new Lamp({ x: 152561, z: 221859.36 }))
+
 	Camera.init()
 	//addStats();
 	const divMenu = document.createElement('div')

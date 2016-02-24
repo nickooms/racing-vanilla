@@ -3,7 +3,8 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   app: path.resolve(__dirname, 'app'),
-  build: path.resolve(__dirname, 'build')
+  build: path.resolve(__dirname, 'build'),
+  exclude: path.resolve(__dirname, 'app/js/threejs')
 };
 
 module.exports = {
@@ -23,11 +24,14 @@ module.exports = {
 			}, {
 				test: /\.js$/,
 				loader: 'babel',
+				exclude: [
+					PATHS.exclude
+				],
 				query: { presets: ['es2015'] }
 			}
 		]
 	},
 	plugins: [
 		new HtmlwebpackPlugin({ title: 'Racing' })
-		]
+	]
 };

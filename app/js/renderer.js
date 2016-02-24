@@ -16,7 +16,7 @@ module.exports = {
 		try {
 			renderer = new THREE.WebGLRenderer({
 				alpha: false,
-				depth: false,
+				depth: true,
 				stencil: false,
 				antialias: false,
 				preserveDrawingBuffer: false

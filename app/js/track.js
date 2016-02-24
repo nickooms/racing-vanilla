@@ -22,8 +22,8 @@ for (let i = 1; i < track.length; i++) {
 		rate = width / height,
 		dist = Math.sqrt(width * width + height * height) / 2,
 		x = Math.sqrt((dist * dist) * rate),
-		y = Math.sqrt((dist * dist) / rate),
-		nr = 1
+		y = Math.sqrt((dist * dist) / rate)//,
+		//nr = 1
 
 	x += Math.min(prev[1], point[1])
 	y += Math.min(prev[3], point[3])

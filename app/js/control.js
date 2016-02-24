@@ -231,7 +231,7 @@ function onMouseDown(event) {
 					cornersFound = 0,
 					oldPoints = [],
 					points = [],
-					worldObject = object.getWorldObject(),
+					//worldObject = object.getWorldObject(),
 					data = object.getCorners(),
 					coordinates = []
 				data.forEach(coord => coordinates.push({ x: coord[0], y: 0, z: coord[1] }))
@@ -243,7 +243,7 @@ function onMouseDown(event) {
 						objectZ = coordinate.z
 					oldPoints.push(formatCoordinate(coordinate))
 					let
-						lastWorldObject = lastSelected.getWorldObject(),
+						//lastWorldObject = lastSelected.getWorldObject(),
 						lastCoordinates = []
 					lastSelected.getCorners().forEach(coord => lastCoordinates.push({ x: coord[0], y: 0, z: coord[1] }))
 					for (let j = 0; j < lastCoordinates.length; j++) {
