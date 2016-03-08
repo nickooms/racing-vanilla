@@ -20,7 +20,9 @@ const
 	Moving = require('./js/moving'),
 	addVoetpad = [require('./data/markt_voetpad').addVoetpad],
 	addRijbaan = [require('./data/markt_rijbaan').addRijbaan],
-	addHuizen = [require('./data/markt_huizen').addHuizen]
+	addHuizen = [require('./data/markt_huizen').addHuizen],
+	palen = require('./data/paal'),
+	praatpalen = require('./data/praatpaal');
 
 let
 	renderer = null,
@@ -54,6 +56,9 @@ function init() {
 	addGround()
 	//addTrack();
 	scene.add(new Lamp({ x: 152561, z: 221859.36 }))
+
+	palen.forEach(paal => scene.add(new Lamp({ x: paal.center.x, z: paal.center.y })));
+	praatpalen.forEach(paal => scene.add(new Lamp({ x: paal.center.x, z: paal.center.y })));
 
 	Camera.init()
 	//addStats();
