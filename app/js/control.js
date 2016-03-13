@@ -5,6 +5,7 @@ const
 	toggleRoofs = require('./house').toggleRoofs,
 	toggleFloors = require('./house').toggleFloors,
 	Moving = require('./moving'),
+	rot = require('./rot').rot,
 
 	$ = selector => document.querySelector(selector),
 

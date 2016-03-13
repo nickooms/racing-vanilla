@@ -26,16 +26,20 @@ const
 	  }
 	  switch (type) {
 	    case 'kruispuntzone':
-	      color = 0xb7b7b7
+	      //color = 0xb7b7b7
+	      color = 0x333333
 	      height = 0.1
 	      break
 	    case 'wegsegment':
-	      color = 0xcccccc
+	      //color = 0xcccccc
+	      color = 0x343434
 	      height = 0.1
 	      break
 	    case 'kruispuntzoneVoetpad':
 	    case 'wegsegmentVoetpad':
-	      color = 0xdddddd
+	      //color = 0xdddddd
+				
+				color = 0x505050
 	      height = 0
 	      break
 	  }
@@ -45,12 +49,18 @@ const
 	  geometry.computeFaceNormals()
 	  geometry.faces = triangles.map(triangle => new THREE.Face3(triangle[0], triangle[1], triangle[2]))
 	  geometry.computeBoundingSphere()
-	  const mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+	  const mesh = new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({
+	  	shading: THREE.FlatShading,
+	  	overdraw: 0.5,
+	  	color: color,
+	  	specular: 0x555555,
+	  	shininess: 50
+	  })/*new THREE.MeshBasicMaterial({
 	    color: color,
 	    opacity: 1,
 	    side: THREE.DoubleSide,
 	    transparent: false
-	  }))
+	  })*/)
 	  scene.add(mesh)
 	},
 

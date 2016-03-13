@@ -21,8 +21,24 @@ const
 	addVoetpad = [require('./data/markt_voetpad').addVoetpad],
 	addRijbaan = [require('./data/markt_rijbaan').addRijbaan],
 	addHuizen = [require('./data/markt_huizen').addHuizen],
-	palen = require('./data/paal'),
-	praatpalen = require('./data/praatpaal');
+	palen = [
+		require('./data/paal_152484.40,221796.27,152546.04,221847.22'),
+		require('./data/paal_152535.80,221830.37,152561.76,221855.93'),
+		require('./data/paal_152550.96,221839.05,152582.63,221870.31'),
+		require('./data/paal_152573.76,221856.94,152604.79,221884.11'),
+		require('./data/paal_152596.62,221871.76,152627.37,221902.32'),
+		require('./data/paal_152620.81,221889.66,152663.08,221918.45'),
+		require('./data/paal_152656.48,221890.52,152724.43,221944.98')
+	],
+	praatpalen = [
+		require('./data/praatpaal_152484.40,221796.27,152546.04,221847.22'),
+		require('./data/praatpaal_152535.80,221830.37,152561.76,221855.93'),
+		require('./data/praatpaal_152550.96,221839.05,152582.63,221870.31'),
+		require('./data/praatpaal_152573.76,221856.94,152604.79,221884.11'),
+		require('./data/praatpaal_152596.62,221871.76,152627.37,221902.32'),
+		require('./data/praatpaal_152620.81,221889.66,152663.08,221918.45'),
+		require('./data/praatpaal_152656.48,221890.52,152724.43,221944.98')
+	];
 
 let
 	renderer = null,
@@ -55,10 +71,10 @@ function init() {
 	//addGeometry();
 	addGround()
 	//addTrack();
-	scene.add(new Lamp({ x: 152561, z: 221859.36 }))
+	//scene.add(new Lamp({ x: 152561, z: 221859.36 }))
 
-	palen.forEach(paal => scene.add(new Lamp({ x: paal.center.x, z: paal.center.y })));
-	praatpalen.forEach(paal => scene.add(new Lamp({ x: paal.center.x, z: paal.center.y })));
+	palen.forEach(paal => paal.forEach(p => scene.add(new Lamp({ x: p.center.x, z: p.center.y }))));
+	praatpalen.forEach(paal => paal.forEach(p => scene.add(new Lamp({ x: p.center.x, z: p.center.y }))));
 
 	Camera.init()
 	//addStats();

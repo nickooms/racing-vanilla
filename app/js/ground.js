@@ -11,7 +11,8 @@ module.exports = {
 		gm = new THREE.MeshBasicMaterial({
 			//map: gt
 			//color: 0x777777
-			color: 'yellow'
+			//color: 'yellow'
+			color: 0x000000
 		});
 		gg.computeBoundingSphere();
 		ground = new THREE.Mesh(gg, gm);

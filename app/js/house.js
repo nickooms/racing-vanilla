@@ -89,7 +89,7 @@ function addHouse(name, points, height, color, floors) {
 			//bumpScale: 1,
 			//specularMap: imgTexture,
 			color: 0xff0000,
-			ambient: color == null ? (Math.random() * 256 * 256 * 256) : color,
+			ambient: color == null ? (Math.random() * 0xff * 0xff * 0xff) : color,
 			specular: 0x666666,
 			shininess: 50,
 			shading: THREE.SmoothShading,

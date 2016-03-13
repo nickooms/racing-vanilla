@@ -47,7 +47,7 @@ for (let i = 1; i < track.length; i++) {
 track = newTrack
 trackSpline = new THREE.Spline()
 trackSpline.initFromArray(track.map(trackP => trackP.slice(1)))
-trackSpline.reparametrizeByArcLength(trackSpline.points.length * 5)
+trackSpline.reparametrizeByArcLength(trackSpline.points.length * 50)
 let
 	trackMaterial,
 	trackGeometry = new THREE.Geometry(),
