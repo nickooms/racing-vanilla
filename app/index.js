@@ -38,6 +38,15 @@ const
 		require('./data/praatpaal_152596.62,221871.76,152627.37,221902.32'),
 		require('./data/praatpaal_152620.81,221889.66,152663.08,221918.45'),
 		require('./data/praatpaal_152656.48,221890.52,152724.43,221944.98')
+	],
+	putdeksels = [
+		require('./data/putdeksel_152484.40,221796.27,152546.04,221847.22'),
+		require('./data/putdeksel_152535.80,221830.37,152561.76,221855.93'),
+		require('./data/putdeksel_152550.96,221839.05,152582.63,221870.31'),
+		require('./data/putdeksel_152573.76,221856.94,152604.79,221884.11'),
+		require('./data/putdeksel_152596.62,221871.76,152627.37,221902.32'),
+		require('./data/putdeksel_152620.81,221889.66,152663.08,221918.45'),
+		require('./data/putdeksel_152656.48,221890.52,152724.43,221944.98')
 	];
 
 let
@@ -75,6 +84,11 @@ function init() {
 
 	palen.forEach(paal => paal.forEach(p => scene.add(new Lamp({ x: p.center.x, z: p.center.y }))));
 	praatpalen.forEach(paal => paal.forEach(p => scene.add(new Lamp({ x: p.center.x, z: p.center.y }))));
+	putdeksels.forEach(paal => paal.forEach(p => {
+		let putdeksel = new Lamp({ x: p.center.x, z: p.center.y });
+		putdeksel.material.color.set(0xff0000);
+		scene.add(putdeksel);
+	}));
 
 	Camera.init()
 	//addStats();
